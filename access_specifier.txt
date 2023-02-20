@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class base
+{
+    private:
+    int x;
+    protected:
+    int y;
+    public:
+    int z;
+    base()
+    {
+        x=1;
+        y=2;
+        z=3;
+        
+    }
+};
+class derived:private base
+//class derived:protected base
+//class derived:public base
+{
+    public:
+    void showdata()
+    {
+        cout<<"X is not accessible"<<endl;
+        cout<<"Value of Y is "<<y<<endl;
+        cout<<"Value of Z is "<<z<<endl;
+    }
+};
+int main()
+{
+    derived d;
+    d.showdata();
+    return 0;
+}
